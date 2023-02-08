@@ -3,7 +3,8 @@ ENV TZ Europe/Moscow
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update &&  apt install -y curl wget  openssh-server ca-certificates tzdata perl
-RUN curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash
+RUN curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh |
+RUN apt install gitlab-ce
 RUN apt-get update && apt-get install -y locales
 
 # Locale
